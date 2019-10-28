@@ -1,0 +1,7 @@
+{
+    "isModule": true,
+    "rules": {
+        "shorten-color": [false],
+        "shorten-id": [false]
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "svg-slimming-loader",
+  "version": "1.0.0",
+  "description": "loader for webpack using svg-slmming to optimize the *.svg file",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benboba/svg-slimming-loader.git"
+  },
+  "keywords": [
+    "loader",
+    "svg"
+  ],
+  "author": "benboba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benboba/svg-slimming-loader/issues"
+  },
+  "homepage": "https://github.com/benboba/svg-slimming-loader#readme",
+  "dependencies": {
+    "loader-utils": "^1.2.3",
+    "schema-utils": "^2.5.0",
+    "svg-slimming": "^1.4.3"
+  },
+  "devDependencies": {
+    "file-loader": "^4.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
