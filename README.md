@@ -81,7 +81,6 @@
         ...
     }
 
-此用法将会把 svg 文件当作 js 模块导出
 
 ## 使用优化规则配置文件
 
@@ -109,10 +108,10 @@
         ...
     }
 
-svg-slimming.config.json 的内容如下：
+svg-slimming.config.json 参考如下：
 
     {
-        // "isModule": true,
+        "isModule": true,
         "rules": {
             "shorten-decimal-digits": [true, 0, 0],
             "shorten-style-attr": [true, true]
