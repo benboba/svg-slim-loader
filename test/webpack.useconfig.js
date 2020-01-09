@@ -20,7 +20,7 @@ module.exports = {
                             isModule: false,
                             configPath: './svg-slimming.config.json',
                             rules: {
-                                'shorten-color': true
+                                'shorten-color': [true]
                             }
                         }
                     }
