@@ -1,10 +1,10 @@
 # svg-slimming-loader
 
-[webpack](https://github.com/webpack/webpack) loader plugin, read svg file and use [svg-slimming](https://github.com/benboba/svg-slimming) for compression
+[webpack](https://github.com/webpack/webpack) 的 loader 插件，读取 svg 文件并使用 [svg-slimming](https://github.com/benboba/svg-slimming) 进行压缩
 
-## Basic usage
+## 基本用法
 
-Basic usage depends on file-loader. The reference configuration of webpack.config.js is as follows:
+基本用法需要依赖 file-loader，webpack.config.js 的参考配置如下：
 ```js
 module.exports = {
     ...
@@ -25,9 +25,9 @@ module.exports = {
 }
 ```
 
-## Export to js module
+## 导出到 js 模块
 
-This usage does not need to rely on file-loader, you need to set isModule to true in options. The reference configuration of webpack.config.js is as follows:
+此用法不需要依赖 file-loader，需要在 options 中设置 isModule 为 true。webpack.config.js 的参考配置如下：
 ```js
 module.exports = {
     ...
@@ -52,11 +52,11 @@ module.exports = {
 }
 ```
 
-This usage will export the svg file as a js module
+此用法将会把 svg 文件当作 js 模块导出
 
-## Use custom optimization rules
+## 使用自定义优化规则
 
-Just configure rules in options. For detailed configuration, please refer to [documentation of svg-slimming](https://github.com/benboba/svg-slimming/blob/master/README.md). The reference configuration of webpack.config.js is as follows:
+在 options 中配置 rules 即可，具体配置可参考 svg-slimming 的[说明文档](https://github.com/benboba/svg-slimming/blob/master/README-zh.md)。webpack.config.js 的参考配置如下：
 ```js
 module.exports = {
     ...
@@ -70,13 +70,8 @@ module.exports = {
                         loader: 'svg-slimming-loader',
                         options: {
                             rules: {
-                                'shorten-decimal-digits': [true, {
-                                    "angelDigit": 1,
-                                    "sizeDigit": 0
-                                }],
-                                'shorten-style-attr': [true, {
-			                        "exchange": true
-                                }]
+                                'shorten-decimal-digits': [true, 0, 0],
+                                'shorten-style-attr': [true, true]
                             }
                         }
                     }
@@ -89,9 +84,9 @@ module.exports = {
 }
 ```
 
-## Use Optimization Rule Configuration File
+## 使用优化规则配置文件
 
-Configure configPath in options, the target can be a file in json format. It also supports the isModule and rules attributes:
+在 options 中配置 configPath，目标指向 json 格式的文件即可，同样支持 isModule 和 rules 两个属性：
 ```js
 module.exports = {
     ...
@@ -116,7 +111,7 @@ module.exports = {
 }
 ```
 
-The svg-slimming.config.json reference is as follows:
+svg-slimming.config.json 参考如下：
 ```js
 {
     "isModule": true,
@@ -127,4 +122,4 @@ The svg-slimming.config.json reference is as follows:
 }
 ```
 
-**Note that when options and config files have both isModule and rules configurations, the options configuration takes precedence**
+**注意，当 options 和 config 文件同时存在 isModule 和 rules 配置时，会以 options 的配置优先**
