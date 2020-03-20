@@ -1,6 +1,6 @@
 {
   "name": "svg-slimming-loader",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "loader for webpack using svg-slmming to optimize the *.svg file",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,7 @@
   "dependencies": {
     "loader-utils": "^1.2.3",
     "schema-utils": "^2.5.0",
-    "svg-slimming": "^1.5.2"
+    "svg-slimming": "^1.5.3"
   },
   "devDependencies": {
     "file-loader": "^4.2.0",
