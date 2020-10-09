@@ -18,7 +18,7 @@ module.exports = {
                         loader: path.resolve(__dirname, '../index.js'),
                         options: {
                             isModule: false,
-                            configPath: './svg-slimming.config.json',
+                            configPath: './test/svg-slim.config.json',
                             rules: {
                                 'shorten-color': [true]
                             }

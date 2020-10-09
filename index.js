@@ -1,4 +1,4 @@
-const SvgSlimming = require('svg-slimming');
+const SvgSlim = require('svg-slim');
 const loaderUtils = require('loader-utils');
 const validateOptions = require('schema-utils');
 
@@ -14,6 +14,12 @@ const schema = {
 		rules: {
 			type: 'object'
 		},
+		params: {
+			type: 'object'
+		},
+		browsers: {
+			type: 'array'
+		},
 		configPath: {
 			type: 'string'
 		}
@@ -24,9 +30,9 @@ const schema = {
 module.exports = function(source) {
 	const callback = this.async();
 	let options = loaderUtils.getOptions(this) || {};
-	validateOptions(schema, options, 'Svg Slimming Loader');
+	validateOptions(schema, options, 'Svg Slim Loader');
 
-	const rules = {};
+	const config = {};
 
 	if (options.configPath) {
 		try {
@@ -41,10 +47,18 @@ module.exports = function(source) {
 	}
 
 	if (options.rules && typeof options.rules === 'object') {
-		Object.assign(rules, options.rules);
+		config.rules = options.rules;
 	}
 
-	SvgSlimming(source, rules).then(res => {
+	if (options.params && typeof options.params === 'object') {
+		config.params = options.params;
+	}
+
+	if (options.browsers && Array.isArray(options.browsers)) {
+		config.browsers = options.browsers;
+	}
+
+	SvgSlim(source, config).then(res => {
 		if (options.isModule) {
 			callback(null, `module.exports=${JSON.stringify(res)}`);
 		} else {

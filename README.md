@@ -1,6 +1,6 @@
-# svg-slimming-loader
+# svg-slim-loader
 
-[webpack](https://github.com/webpack/webpack) loader plugin, read svg file and use [svg-slimming](https://github.com/benboba/svg-slimming) for compression
+[webpack](https://github.com/webpack/webpack) loader plugin, read svg file and use [svg-slim](https://github.com/benboba/svg-slim) for compression
 
 ## Basic usage
 
@@ -15,7 +15,7 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     'file-loader',
-                    'svg-slimming-loader'
+                    'svg-slim-loader'
                 ]
             }
             ...
@@ -38,7 +38,7 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'svg-slimming-loader',
+                        loader: 'svg-slim-loader',
                         options: {
                             isModule: true
                         }
@@ -56,7 +56,7 @@ This usage will export the svg file as a js module
 
 ## Use custom optimization rules
 
-Just configure rules in options. For detailed configuration, please refer to [documentation of svg-slimming](https://github.com/benboba/svg-slimming/blob/master/README.md). The reference configuration of webpack.config.js is as follows:
+Just configure rules in options. For detailed configuration, please refer to [documentation of svg-slim](https://github.com/benboba/svg-slim/blob/master/README.md). The reference configuration of webpack.config.js is as follows:
 ```js
 module.exports = {
     ...
@@ -67,16 +67,15 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'svg-slimming-loader',
+                        loader: 'svg-slim-loader',
                         options: {
                             rules: {
-                                'shorten-decimal-digits': [true, {
-                                    "angelDigit": 1,
-                                    "sizeDigit": 0
-                                }],
-                                'shorten-style-attr': [true, {
-			                        "exchange": true
-                                }]
+                                'shorten-decimal-digits': true,
+                                'shorten-style-attr': true
+                            },
+                            params: {
+                                sizeDigit: 2,
+                                angelDigit: 2
                             }
                         }
                     }
@@ -102,9 +101,9 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'svg-slimming-loader',
+                        loader: 'svg-slim-loader',
                         options: {
-                            configPath: './svg-slimming.config.json'
+                            configPath: './svg-slim.config.json'
                         }
                     }
                 ]
@@ -116,7 +115,7 @@ module.exports = {
 }
 ```
 
-The svg-slimming.config.json reference is as follows:
+The svg-slim.config.json reference is as follows:
 ```js
 {
     "isModule": true,

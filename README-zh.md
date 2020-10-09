@@ -1,6 +1,6 @@
-# svg-slimming-loader
+# svg-slim-loader
 
-[webpack](https://github.com/webpack/webpack) 的 loader 插件，读取 svg 文件并使用 [svg-slimming](https://github.com/benboba/svg-slimming) 进行压缩
+[webpack](https://github.com/webpack/webpack) 的 loader 插件，读取 svg 文件并使用 [svg-slim](https://github.com/benboba/svg-slim) 进行压缩
 
 ## 基本用法
 
@@ -15,7 +15,7 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     'file-loader',
-                    'svg-slimming-loader'
+                    'svg-slim-loader'
                 ]
             }
             ...
@@ -38,7 +38,7 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'svg-slimming-loader',
+                        loader: 'svg-slim-loader',
                         options: {
                             isModule: true
                         }
@@ -56,7 +56,7 @@ module.exports = {
 
 ## 使用自定义优化规则
 
-在 options 中配置 rules 即可，具体配置可参考 svg-slimming 的[说明文档](https://github.com/benboba/svg-slimming/blob/master/README-zh.md)。webpack.config.js 的参考配置如下：
+在 options 中配置 rules 即可，具体配置可参考 svg-slim 的[说明文档](https://github.com/benboba/svg-slim/blob/master/README-zh.md)。webpack.config.js 的参考配置如下：
 ```js
 module.exports = {
     ...
@@ -67,11 +67,15 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'svg-slimming-loader',
+                        loader: 'svg-slim-loader',
                         options: {
                             rules: {
-                                'shorten-decimal-digits': [true, 0, 0],
-                                'shorten-style-attr': [true, true]
+                                'shorten-decimal-digits': true,
+                                'shorten-style-attr': true
+                            },
+                            params: {
+                                sizeDigit: 2,
+                                angelDigit: 2
                             }
                         }
                     }
@@ -97,9 +101,9 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'svg-slimming-loader',
+                        loader: 'svg-slim-loader',
                         options: {
-                            configPath: './svg-slimming.config.json'
+                            configPath: './svg-slim.config.json'
                         }
                     }
                 ]
@@ -111,13 +115,13 @@ module.exports = {
 }
 ```
 
-svg-slimming.config.json 参考如下：
+svg-slim.config.json 参考如下：
 ```js
 {
     "isModule": true,
     "rules": {
-        "shorten-decimal-digits": [true, 0, 0],
-        "shorten-style-attr": [true, true]
+        "shorten-decimal-digits": true,
+        "shorten-style-attr": true
     }
 }
 ```
