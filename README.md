@@ -1,5 +1,7 @@
 # svg-slim-loader
 
+[中文版](README-cn.md)
+
 [webpack](https://github.com/webpack/webpack) loader plugin, read svg file and use [svg-slim](https://github.com/benboba/svg-slim) for compression
 
 ## Basic usage
