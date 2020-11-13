@@ -2437,10 +2437,10 @@ svg-path-contours@^2.0.0:
     normalize-svg-path "^0.1.0"
     vec2-copy "^1.0.0"
 
-svg-slim@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/svg-slim/-/svg-slim-2.0.1.tgz#aeb00b0a6651acd2df1bd2a90e1d21b3afd2033b"
-  integrity sha512-NBhAnn4crG4cH0VxmfXTgwJoLeIdSrwmkF3mq2btXXjBa2KEGx2oMXPn4cFKE/8RToBnKZLmMuueE+DnAsWu/w==
+svg-slim@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/svg-slim/-/svg-slim-2.0.2.tgz#784552b5d695123d8229de1c5d1376c1905afd85"
+  integrity sha512-j/6Tu4N/8Vjj59h08P1d4GjoUGWBH038r2A2hGh8norVVolhsrifpo2xiB0zz7MzvUdUHAeRTxfjgd9Mh1v+Tg==
   dependencies:
     "@types/browserslist" "^4.8.0"
     browserslist "^4.14.1"
@@ -2450,13 +2450,13 @@ svg-slim@^2.0.1:
     ramda "^0.25.0"
     rxjs "^6.6.2"
     svg-path-contours "^2.0.0"
-    svg-vdom "^1.0.8"
+    svg-vdom "^1.0.9"
     triangulate-contours "^1.0.2"
 
-svg-vdom@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/svg-vdom/-/svg-vdom-1.0.8.tgz#a48df378285b56de10e0d5e25e805d5cf633a3e9"
-  integrity sha512-x4Er103jC7sqRqqrmfLi9uI6ugddCJXCQMiHUmttgKkfdED3Oe6H4FR8CiErJUeZ79dOddtLPN2mRrV4gwbqPQ==
+svg-vdom@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/svg-vdom/-/svg-vdom-1.0.9.tgz#b8d0b6abce93ec082d1ab3b8ce86e58d8edc86df"
+  integrity sha512-TyVtOnrSfXfL0SSVXNk1XvC7cDxPhSbfjFIMzdeQUxUB8Y5+RrOh1n0kfKnIt2abD5OPpS0gR5UK2WjWzB4IIA==
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"

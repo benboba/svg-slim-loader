@@ -1,6 +1,6 @@
 {
   "name": "svg-slim-loader",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "loader for webpack using svg-slm to optimize the *.svg file",
   "main": "index.js",
   "repository": {
@@ -25,7 +25,7 @@
   "dependencies": {
     "loader-utils": "^1.2.3",
     "schema-utils": "^2.5.0",
-    "svg-slim": "^2.0.1"
+    "svg-slim": "^2.0.2"
   },
   "devDependencies": {
     "file-loader": "^4.2.0",
