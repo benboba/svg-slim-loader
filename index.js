@@ -1,6 +1,6 @@
 const SvgSlim = require('svg-slim');
 const loaderUtils = require('loader-utils');
-const validateOptions = require('schema-utils');
+const { validate } = require('schema-utils');
 
 const fs = require('fs');
 const path = require('path');
@@ -18,7 +18,7 @@ const schema = {
 			type: 'object'
 		},
 		browsers: {
-			type: 'array'
+			type: 'array',
 		},
 		configPath: {
 			type: 'string'
@@ -30,7 +30,7 @@ const schema = {
 module.exports = function(source) {
 	const callback = this.async();
 	let options = loaderUtils.getOptions(this) || {};
-	validateOptions(schema, options, 'Svg Slim Loader');
+	validate(schema, options, 'Svg Slim Loader');
 
 	const config = {};
 
