@@ -56,7 +56,7 @@ module.exports = {
 
 ## 使用自定义优化规则
 
-在 options 中配置 rules 即可，具体配置可参考 svg-slim 的[说明文档](https://github.com/benboba/svg-slim/blob/master/README-zh.md)。webpack.config.js 的参考配置如下：
+在 options 中配置 rules 即可，具体配置可参考 svg-slim 的[说明文档](https://github.com/benboba/svg-slim/blob/master/README-cn.md)。webpack.config.js 的参考配置如下：
 ```js
 module.exports = {
     ...
